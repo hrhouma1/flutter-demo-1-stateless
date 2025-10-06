@@ -61,30 +61,13 @@ Détail --(AppBar Back)--> Accueil
 Paramètres --(AppBar Back)--> Accueil
 ```
 
-
+<br/>
+<br/>
 
 ## Partie 3 – Interactions utilisateur → Réactions UI 
 
-**À faire :** lister au moins 4 interactions différentes. Exemple :
 
-```
-Tap FAB            -> SnackBar: "Action exécutée"
-Tap Carte 1        -> SnackBar: "Carte 1"
-Tap Carte 2        -> Navigation vers Détail(id)
-Tap Icon Paramètres-> Navigation vers Paramètres
-Switch Thème       -> Recalcul des couleurs (UI)
-```
-
-
-
-
-
-<br/>
-<br/>
-
-# Pratique 1
-
-## Partie 1 – Arborescence des Widgets (Mermaid)
+## Arborescence des Widgets (Mermaid)
 
 ```mermaid
 flowchart TD
