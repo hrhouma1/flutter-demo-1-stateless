@@ -1,22 +1,9 @@
-Voici un **énoncé d’examen national** (style “papier officiel”) que tu peux déposer tel quel.
-Il est **100 % sans code Flutter**, **100 % sans états internes** : les étudiants doivent uniquement produire des **diagrammes ASCII** (arborescence + navigation + interactions).
 
----
+# Pratique 1
 
-# Examen National – Conception d’Interfaces Flutter **sans code**
-
-## Objectif
-
-Évaluer la capacité à concevoir des interfaces Flutter en utilisant uniquement des **schémas ASCII**.
-Aucun code Flutter/Dart n’est requis.
-Aucune représentation d’états internes n’est autorisée (pas de Idle, Loading, etc.).
 
 ## Instructions générales
 
-* Durée : 2 h
-* Travail individuel
-* Aucun document Flutter/Dart autorisé.
-* Vous devez produire **trois schémas ASCII distincts** décrivant :
 
   1. **L’arborescence des widgets (Widget Tree)** pour trois écrans (Accueil, Détail, Paramètres).
   2. **La navigation entre écrans** (flux “tap” → écran).
@@ -26,17 +13,8 @@ Aucune représentation d’états internes n’est autorisée (pas de Idle, Load
 
 * Utilisez des noms de widgets Flutter réels (MaterialApp, Scaffold, AppBar, Body, Card, Icon…).
 * Aucune notion d’état interne (Idle, Loading, etc.).
-* Aucun code Dart dans la copie.
-* Les schémas ASCII doivent être lisibles et correctement indentés.
 
-## Barème (40 pts)
 
-* (16 pts) Arborescence claire et complète (3 écrans).
-* (12 pts) Navigation correcte entre écrans.
-* (8 pts) Interactions utilisateur → réactions UI.
-* (4 pts) Lisibilité et rigueur (titres, indentation, absence de confusion).
-
----
 
 ## Partie 1 – Arborescence des Widgets (ASCII)
 
@@ -71,9 +49,9 @@ Aucune représentation d’états internes n’est autorisée (pas de Idle, Load
       └─ Radio Langue
 ```
 
----
 
-## Partie 2 – Navigation entre écrans (ASCII)
+
+## Partie 2 – Navigation entre écrans 
 
 **À faire :** représenter les flux “tap” → écran. Exemple :
 
@@ -84,7 +62,7 @@ Détail --(AppBar Back)--> Accueil
 Paramètres --(AppBar Back)--> Accueil
 ```
 
----
+
 
 ## Partie 3 – Interactions utilisateur → Réactions UI (ASCII)
 
@@ -98,19 +76,4 @@ Tap Icon Paramètres-> Navigation vers Paramètres
 Switch Thème       -> Recalcul des couleurs (UI)
 ```
 
----
 
-## Critères de qualité attendus
-
-* **Structure Flutter plausible** : MaterialApp → Scaffold → AppBar/Body/FAB, etc.
-* **Clarté** : indentation, libellés explicites.
-* **Cohérence** : mêmes noms d’écrans d’un schéma à l’autre.
-* **Accessibilité basique** : mention des tailles/contrastes si nécessaire.
-
----
-
-**Livrables** : un fichier texte (ASCII) ou PDF contenant vos trois schémas (Arborescence, Navigation, Interactions) clairement séparés et titrés.
-
----
-
-Veux-tu que je te fasse aussi **une grille de correction rapide (cases à cocher)** pour cet examen national ? (ça te permettrait de corriger vite les copies).
