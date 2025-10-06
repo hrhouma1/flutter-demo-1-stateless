@@ -60,9 +60,9 @@
 * Capture d’écran de l’app **ouverte** (page d’accueil) + capture d’écran de la **page détail**.
 * Mini-rapport (5–8 lignes) : explication de l’import, des widgets utilisés, et de la navigation.
 
----
 
-## Squelette de départ avec TODO (à donner aux étudiants)
+
+## Squelette de départ avec TODO 
 
 ```dart
 import 'package:flutter/material.dart';
