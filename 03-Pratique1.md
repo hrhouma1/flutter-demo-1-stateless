@@ -77,3 +77,71 @@ Switch Thème       -> Recalcul des couleurs (UI)
 ```
 
 
+
+
+
+<br/>
+<br/>
+
+# Pratique 1
+
+## Partie 1 – Arborescence des Widgets (Mermaid)
+
+```mermaid
+flowchart TD
+  %% ECRAN ACCUEIL
+  subgraph Accueil
+    MaterialApp --> A_Scaffold[Scaffold]
+    A_Scaffold --> A_AppBar[AppBar: Accueil]
+    A_Scaffold --> A_Body[Body: SingleChildScrollView]
+    A_Scaffold --> A_FAB[FloatingActionButton: add_alert]
+    A_Body --> A_Column[Column]
+    A_Column --> A_Titre[Text: Bienvenue]
+    A_Column --> A_Bandeau[Container: bandeau info]
+    A_Column --> A_Grille[Row/Wrap: 3 Cards]
+    A_Column --> A_Bouton[Bouton decoratif]
+  end
+
+  %% ECRAN DETAIL
+  subgraph Detail
+    D_Scaffold[Scaffold]
+    D_Scaffold --> D_AppBar[AppBar: titre dynamique]
+    D_Scaffold --> D_Body[Body: Column]
+    D_Body --> D_Image[Image/Hero]
+    D_Body --> D_Texte[Text descriptif]
+    D_Body --> D_Actions[Row: Boutons]
+  end
+
+  %% ECRAN PARAMETRES
+  subgraph Parametres
+    P_Scaffold[Scaffold]
+    P_Scaffold --> P_AppBar[AppBar: Parametres]
+    P_Scaffold --> P_List[ListView]
+    P_List --> P_Switch[Switch: Theme]
+    P_List --> P_Radio[Radio: Langue]
+  end
+```
+
+## Partie 2 – Navigation entre écrans (Mermaid)
+
+```mermaid
+flowchart LR
+  Accueil -- tap Carte 2 --> Detail
+  Accueil -- tap Icon Parametres --> Parametres
+  Detail -- AppBar Back --> Accueil
+  Parametres -- AppBar Back --> Accueil
+```
+
+## Partie 3 – Interactions utilisateur → Réactions UI (Mermaid)
+
+```mermaid
+flowchart LR
+  TapFAB((Tap FAB)) --> SnackFAB[SnackBar: Action executee]
+  TapCarte1((Tap Carte 1)) --> SnackC1[SnackBar: Carte 1]
+  TapCarte2((Tap Carte 2)) --> GoDetail[Navigate to Detail(id)]
+  TapIconParams((Tap Icon Parametres)) --> GoSettings[Navigate to Parametres]
+  ToggleTheme((Switch Theme)) --> Recompute[Recompute color scheme]
+```
+
+
+
