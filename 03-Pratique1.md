@@ -16,7 +16,7 @@
 
 
 
-## Partie 1 – Arborescence des Widgets (ASCII)
+## Partie 1 – Arborescence des Widgets
 
 **À faire :** représenter la structure hiérarchique des trois écrans. Exemple de modèle ASCII à compléter :
 
