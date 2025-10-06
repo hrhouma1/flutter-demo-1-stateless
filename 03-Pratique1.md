@@ -114,16 +114,6 @@ flowchart LR
   Parametres -- AppBar Back --> Accueil
 ```
 
-## Partie 3 – Interactions utilisateur → Réactions UI (Mermaid)
-
-```mermaid
-flowchart LR
-  TapFAB((Tap FAB)) --> SnackFAB[SnackBar: Action executee]
-  TapCarte1((Tap Carte 1)) --> SnackC1[SnackBar: Carte 1]
-  TapCarte2((Tap Carte 2)) --> GoDetail[Navigate to Detail(id)]
-  TapIconParams((Tap Icon Parametres)) --> GoSettings[Navigate to Parametres]
-  ToggleTheme((Switch Theme)) --> Recompute[Recompute color scheme]
-```
 
 
 
