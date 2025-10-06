@@ -159,4 +159,130 @@ flowchart LR
 
 
 
+top — voici **plusieurs versions 100% compatibles GitHub** pour ta *Partie 3 — Interactions UI*.
+Tu peux en choisir une ou les proposer toutes aux étudiants.
+
+---
+
+## Version A — Flowchart simple (IDs sûrs, labels FR sans accents)
+
+```mermaid
+flowchart LR
+  TapFAB((Tap FAB)) --> SnackFAB[SnackBar: Action executee]
+  TapCarte1((Tap Carte 1)) --> SnackC1[SnackBar: Carte 1]
+  TapCarte2((Tap Carte 2)) --> GoDetail[Navigate to Detail (id)]
+  TapIconParams((Tap Icon Parametres)) --> GoSettings[Navigate to Parametres]
+  ToggleTheme((Switch Theme)) --> Recompute[Recompute color scheme]
+```
+
+---
+
+## Version B — Flowchart avec déclaration des nœuds puis liens
+
+```mermaid
+flowchart LR
+  %% --- Nodes ---
+  TapFAB((Tap FAB))
+  SnackFAB[SnackBar: Action executee]
+
+  TapCarte1((Tap Carte 1))
+  SnackC1[SnackBar: Carte 1]
+
+  TapCarte2((Tap Carte 2))
+  GoDetail[[Navigate to Detail id]]
+
+  TapIconParams((Tap Icon Parametres))
+  GoSettings[[Navigate to Parametres]]
+
+  ToggleTheme((Switch Theme))
+  Recompute[Recompute color scheme]
+
+  %% --- Edges ---
+  TapFAB --> SnackFAB
+  TapCarte1 --> SnackC1
+  TapCarte2 --> GoDetail
+  TapIconParams --> GoSettings
+  ToggleTheme --> Recompute
+```
+
+---
+
+## Version C — Flowchart avec sous-graphes (structure lisible)
+
+```mermaid
+flowchart TD
+  subgraph Actions
+    TapFAB((Tap FAB))
+    TapCarte1((Tap Carte 1))
+    TapCarte2((Tap Carte 2))
+    TapIconParams((Tap Icon Parametres))
+    ToggleTheme((Switch Theme))
+  end
+
+  subgraph Reactions
+    SnackFAB[SnackBar: Action executee]
+    SnackC1[SnackBar: Carte 1]
+    GoDetail[[Navigate to Detail id]]
+    GoSettings[[Navigate to Parametres]]
+    Recompute[Recompute color scheme]
+  end
+
+  TapFAB --> SnackFAB
+  TapCarte1 --> SnackC1
+  TapCarte2 --> GoDetail
+  TapIconParams --> GoSettings
+  ToggleTheme --> Recompute
+```
+
+---
+
+## Version D — Sequence Diagram (souvent plus robuste sur GitHub)
+
+```mermaid
+sequenceDiagram
+  actor U as User
+  participant A as Accueil
+  participant SM as ScaffoldMessenger
+  participant N as Navigator
+
+  U->>A: Tap FAB
+  A->>SM: showSnackBar(Action executee)
+
+  U->>A: Tap Carte 1
+  A->>SM: showSnackBar(Carte 1)
+
+  U->>A: Tap Carte 2
+  A->>N: push(Detail, id)
+
+  U->>A: Tap Icon Parametres
+  A->>N: push(Parametres)
+```
+
+---
+
+## Version E — Flowchart ultra-compact (une interaction par ligne)
+
+```mermaid
+flowchart LR
+  U1((Tap FAB)) --> R1[SnackBar: Action executee]
+  U2((Tap Carte 1)) --> R2[SnackBar: Carte 1]
+  U3((Tap Carte 2)) --> R3[[Navigate to Detail id]]
+  U4((Tap Icon Parametres)) --> R4[[Navigate to Parametres]]
+  U5((Switch Theme)) --> R5[Recompute color scheme]
+```
+
+---
+
+### Tips “GitHub qui râle”
+
+* **IDs sans espaces/accents/signes** (ex.: `TapIconParams`, pas `Tap Icon Paramètres`).
+* Les **accents** sont ok dans les **labels** (`[...]` ou `((...))`) mais si ça casse, remplace-les par ASCII.
+* **Une flèche par ligne** ; pas de coupure de ligne au milieu.
+* Pas de `#` dans les labels; évite aussi les guillemets si possible.
+* Si besoin, remplace `(id)` par `id` dans les labels.
+
+Tu veux que je génère aussi la **Partie 1 (arborescence)** et **Partie 2 (navigation)** en plusieurs variantes GitHub-safe ?
+
+
+
 
