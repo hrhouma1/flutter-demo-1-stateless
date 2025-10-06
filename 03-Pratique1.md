@@ -64,10 +64,10 @@ Paramètres --(AppBar Back)--> Accueil
 <br/>
 <br/>
 
-## Partie 3 – Interactions utilisateur → Réactions UI 
+# Annexes – Interactions utilisateur → Réactions UI 
 
 
-## Arborescence des Widgets (Mermaid)
+## Arborescence des Widgets 
 
 ```mermaid
 flowchart TD
@@ -104,7 +104,7 @@ flowchart TD
   end
 ```
 
-## Partie 2 – Navigation entre écrans (Mermaid)
+## Navigation entre écrans (Mermaid)
 
 ```mermaid
 flowchart LR
@@ -118,10 +118,7 @@ flowchart LR
 
 
 
-# Partie 3 — Interactions UI (Mermaid, corrigé)
-
-
-## Version A— Flowchart avec sous-graphes 
+## Interactions UI - Flowchart avec sous-graphes 
 
 ```mermaid
 flowchart TD
@@ -149,7 +146,7 @@ flowchart TD
 ```
 
 
-## Version B — Sequence Diagram 
+## Diagramme de séquence
 
 ```mermaid
 sequenceDiagram
@@ -173,7 +170,7 @@ sequenceDiagram
 
 
 
-## Version C — interaction 
+## interaction 
 
 ```mermaid
 flowchart LR
