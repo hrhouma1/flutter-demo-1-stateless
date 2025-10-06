@@ -1,5 +1,19 @@
 # Diagrammes Mermaid - Architecture Flutter
 
+> **Thème:** Couleurs claires et professionnelles, sans emojis, optimisé pour une lecture confortable
+
+## Palette de Couleurs Utilisée
+
+```
+Primary Blue:    #E3F2FD (très clair)    #90CAF9 (clair)    #42A5F5 (moyen)    #1976D2 (foncé)
+Green:           #E8F5E9 (très clair)    #A5D6A7 (clair)    #66BB6A (moyen)
+Red/Orange:      #FFEBEE (très clair)    #FFCDD2 (clair)    #E57373 (moyen)
+Purple:          #F3E5F5 (très clair)    #CE93D8 (clair)    #AB47BC (moyen)
+Grey:            #FAFAFA (très clair)    #E0E0E0 (clair)    #9E9E9E (moyen)
+```
+
+---
+
 ## 1. Vue d'ensemble de l'Application
 
 ```mermaid
@@ -26,11 +40,13 @@ graph TD
     
     G --> G1[Icon: add]
     
-    style A fill:#ff9999
-    style B fill:#ffcc99
-    style C fill:#ffff99
-    style D fill:#99ccff
-    style F fill:#99ff99
+    style A fill:#E3F2FD,stroke:#1976D2,stroke-width:2px,color:#000
+    style B fill:#E8F5E9,stroke:#43A047,stroke-width:2px,color:#000
+    style C fill:#FFF9C4,stroke:#F57C00,stroke-width:2px,color:#000
+    style D fill:#E1BEE7,stroke:#8E24AA,stroke-width:2px,color:#000
+    style E fill:#BBDEFB,stroke:#1976D2,stroke-width:1px,color:#000
+    style F fill:#C8E6C9,stroke:#43A047,stroke-width:1px,color:#000
+    style G fill:#FFCCBC,stroke:#E64A19,stroke-width:1px,color:#000
 ```
 
 ## 2. Hiérarchie Complète des Widgets
@@ -55,7 +71,7 @@ graph TB
     
     Scroll --> Col[Column<br/>crossAxisAlignment: stretch]
     
-    Col --> W1[TitreSection<br/>titre: 'Bienvenue...']
+    Col --> W1[TitreSection<br/>titre: Bienvenue...]
     Col --> Space1[SizedBox height:20]
     Col --> W2[ContainerColore<br/>couleur: blue]
     Col --> Space2[SizedBox height:20]
@@ -73,14 +89,14 @@ graph TB
     W2C --> W2T[Text<br/>white, 18px]
     
     W3 --> W3Col[Column]
-    W3Col --> W3Label[Text: 'Exemple de Row...']
+    W3Col --> W3Label[Text: Exemple de Row...]
     W3Col --> W3Row[Row<br/>spaceEvenly]
     W3Row --> Box1[Container<br/>100x100 red]
     W3Row --> Box2[Container<br/>100x100 green]
     W3Row --> Box3[Container<br/>100x100 orange]
     
     W4 --> W4Col[Column]
-    W4Col --> W4Label[Text: 'Exemples de Cards']
+    W4Col --> W4Label[Text: Exemples de Cards]
     W4Col --> Card1[CarteInfo<br/>Carte 1, star, amber]
     W4Col --> Card2[CarteInfo<br/>Carte 2, favorite, red]
     
@@ -92,7 +108,7 @@ graph TB
     Tile1 --> Trail1[Icon trailing]
     
     W5 --> W5Col[Column]
-    W5Col --> W5Label[Text: 'Collection d'icônes']
+    W5Col --> W5Label[Text: Collection d'icônes]
     W5Col --> W5Row[Row<br/>spaceAround]
     W5Row --> Icon1[Icon Home<br/>blue]
     W5Row --> Icon2[Icon Person<br/>green]
@@ -103,37 +119,44 @@ graph TB
     W6Cont --> W6Mat[Material transparent]
     W6Mat --> W6Ink[InkWell]
     W6Ink --> W6Pad[Padding]
-    W6Pad --> W6Text[Text: 'Bouton Exemple']
+    W6Pad --> W6Text[Text: Bouton Exemple]
     
     FAB --> FABIcon[Icon: add]
     
-    style App fill:#ffcccc
-    style Page fill:#ffffcc
-    style W1 fill:#ccffcc
-    style W2 fill:#ccffcc
-    style W3 fill:#ccffcc
-    style W4 fill:#ccffcc
-    style W5 fill:#ccffcc
-    style W6 fill:#ccffcc
+    style Main fill:#FAFAFA,stroke:#424242,stroke-width:2px,color:#000
+    style App fill:#FFEBEE,stroke:#C62828,stroke-width:2px,color:#000
+    style Page fill:#FFF3E0,stroke:#E65100,stroke-width:2px,color:#000
+    style Scaffold fill:#E3F2FD,stroke:#1565C0,stroke-width:2px,color:#000
+    style W1 fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px,color:#000
+    style W2 fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px,color:#000
+    style W3 fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px,color:#000
+    style W4 fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px,color:#000
+    style W5 fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px,color:#000
+    style W6 fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px,color:#000
+    style Space1 fill:#FAFAFA,stroke:#E0E0E0,stroke-width:1px,color:#666
+    style Space2 fill:#FAFAFA,stroke:#E0E0E0,stroke-width:1px,color:#666
+    style Space3 fill:#FAFAFA,stroke:#E0E0E0,stroke-width:1px,color:#666
+    style Space4 fill:#FAFAFA,stroke:#E0E0E0,stroke-width:1px,color:#666
+    style Space5 fill:#FAFAFA,stroke:#E0E0E0,stroke-width:1px,color:#666
 ```
 
-## 3. Disposition Layout - Column et Row
+## 3. Disposition Layout - Column (Vertical)
 
 ```mermaid
 graph TB
-    subgraph "PageAccueil - Column (Vertical)"
+    subgraph PageAccueil["PageAccueil - Column Verticale"]
         direction TB
-        T1[TitreSection<br/>📝 Bienvenue dans Flutter!]
-        S1[⬇️ SizedBox 20px]
-        T2[ContainerColore<br/>🔵 Container avec fond bleu]
-        S2[⬇️ SizedBox 20px]
-        T3[SectionRow<br/>📦 Disposition horizontale]
-        S3[⬇️ SizedBox 20px]
-        T4[SectionCartes<br/>🎴 Cards]
-        S4[⬇️ SizedBox 20px]
-        T5[SectionIcones<br/>🎨 Icônes]
-        S5[⬇️ SizedBox 20px]
-        T6[BoutonDecoratif<br/>🔘 Bouton]
+        T1[TitreSection<br/>Bienvenue dans Flutter!]
+        S1[SizedBox 20px<br/>espacement]
+        T2[ContainerColore<br/>Container avec fond bleu]
+        S2[SizedBox 20px<br/>espacement]
+        T3[SectionRow<br/>Disposition horizontale]
+        S3[SizedBox 20px<br/>espacement]
+        T4[SectionCartes<br/>Cards Material Design]
+        S4[SizedBox 20px<br/>espacement]
+        T5[SectionIcones<br/>Collection d'icônes]
+        S5[SizedBox 20px<br/>espacement]
+        T6[BoutonDecoratif<br/>Bouton avec gradient]
         
         T1 --> S1
         S1 --> T2
@@ -147,31 +170,37 @@ graph TB
         S5 --> T6
     end
     
-    style T1 fill:#e3f2fd
-    style T2 fill:#bbdefb
-    style T3 fill:#90caf9
-    style T4 fill:#64b5f6
-    style T5 fill:#42a5f5
-    style T6 fill:#2196f3
+    style PageAccueil fill:#FAFAFA,stroke:#424242,stroke-width:2px,color:#000
+    style T1 fill:#E3F2FD,stroke:#1976D2,stroke-width:2px,color:#000
+    style T2 fill:#BBDEFB,stroke:#1976D2,stroke-width:2px,color:#000
+    style T3 fill:#90CAF9,stroke:#1976D2,stroke-width:2px,color:#000
+    style T4 fill:#64B5F6,stroke:#1976D2,stroke-width:2px,color:#000
+    style T5 fill:#42A5F5,stroke:#1976D2,stroke-width:2px,color:#000
+    style T6 fill:#1E88E5,stroke:#1976D2,stroke-width:2px,color:#fff
+    style S1 fill:#FAFAFA,stroke:#E0E0E0,stroke-width:1px,color:#666
+    style S2 fill:#FAFAFA,stroke:#E0E0E0,stroke-width:1px,color:#666
+    style S3 fill:#FAFAFA,stroke:#E0E0E0,stroke-width:1px,color:#666
+    style S4 fill:#FAFAFA,stroke:#E0E0E0,stroke-width:1px,color:#666
+    style S5 fill:#FAFAFA,stroke:#E0E0E0,stroke-width:1px,color:#666
 ```
 
 ## 4. SectionRow - Disposition Horizontale
 
 ```mermaid
-graph LR
-    subgraph "SectionRow - Row (Horizontal)"
-        direction LR
-        Label[Text:<br/>Exemple de Row...]
+graph TB
+    subgraph SectionRowWidget["SectionRow - Row Horizontale"]
+        direction TB
+        Label[Text: Exemple de Row<br/>disposition horizontale]
         
-        subgraph RowLayout["Row (MainAxisAlignment.spaceEvenly)"]
+        subgraph RowLayout["Row avec MainAxisAlignment.spaceEvenly"]
             direction LR
-            Space1[⬅️ espace ➡️]
-            Box1[Container<br/>🔴 Box 1<br/>100x100 red]
-            Space2[⬅️ espace ➡️]
-            Box2[Container<br/>🟢 Box 2<br/>100x100 green]
-            Space3[⬅️ espace ➡️]
-            Box3[Container<br/>🟠 Box 3<br/>100x100 orange]
-            Space4[⬅️ espace ➡️]
+            Space1[espace]
+            Box1[Container<br/>Box 1<br/>100x100<br/>rouge clair]
+            Space2[espace]
+            Box2[Container<br/>Box 2<br/>100x100<br/>vert clair]
+            Space3[espace]
+            Box3[Container<br/>Box 3<br/>100x100<br/>orange clair]
+            Space4[espace]
             
             Space1 -.-> Box1
             Box1 -.-> Space2
@@ -180,126 +209,158 @@ graph LR
             Space3 -.-> Box3
             Box3 -.-> Space4
         end
+        
+        Label --> RowLayout
     end
     
-    style Box1 fill:#ffcdd2
-    style Box2 fill:#c8e6c9
-    style Box3 fill:#ffe0b2
+    style SectionRowWidget fill:#FAFAFA,stroke:#424242,stroke-width:2px,color:#000
+    style Label fill:#E0E0E0,stroke:#757575,stroke-width:1px,color:#000
+    style RowLayout fill:#F5F5F5,stroke:#9E9E9E,stroke-width:2px,color:#000
+    style Box1 fill:#FFCDD2,stroke:#E57373,stroke-width:2px,color:#000
+    style Box2 fill:#C8E6C9,stroke:#81C784,stroke-width:2px,color:#000
+    style Box3 fill:#FFE0B2,stroke:#FFB74D,stroke-width:2px,color:#000
+    style Space1 fill:#FAFAFA,stroke:#E0E0E0,stroke-width:1px,stroke-dasharray: 5 5,color:#999
+    style Space2 fill:#FAFAFA,stroke:#E0E0E0,stroke-width:1px,stroke-dasharray: 5 5,color:#999
+    style Space3 fill:#FAFAFA,stroke:#E0E0E0,stroke-width:1px,stroke-dasharray: 5 5,color:#999
+    style Space4 fill:#FAFAFA,stroke:#E0E0E0,stroke-width:1px,stroke-dasharray: 5 5,color:#999
 ```
 
 ## 5. SectionCartes - Structure des Cards
 
 ```mermaid
 graph TB
-    subgraph "SectionCartes"
+    subgraph SectionCartesWidget["SectionCartes - Cards Material Design"]
         Label[Text: Exemples de Cards]
         
         subgraph Carte1["CarteInfo 1"]
-            Card1[Card elevation:4]
+            Card1[Card avec elevation:4]
             Card1 --> Tile1[ListTile]
             
-            Tile1 --> L1[leading:<br/>⭐ Icon star<br/>amber, 40px]
-            Tile1 --> T1[title:<br/>Carte 1<br/>bold]
+            Tile1 --> L1[leading:<br/>Icon star<br/>couleur amber<br/>taille 40px]
+            Tile1 --> T1[title:<br/>Carte 1<br/>style bold]
             Tile1 --> S1[subtitle:<br/>Description<br/>de la carte 1]
-            Tile1 --> Tr1[trailing:<br/>▶ arrow_forward_ios]
+            Tile1 --> Tr1[trailing:<br/>Icon arrow<br/>forward ios]
         end
         
         subgraph Carte2["CarteInfo 2"]
-            Card2[Card elevation:4]
+            Card2[Card avec elevation:4]
             Card2 --> Tile2[ListTile]
             
-            Tile2 --> L2[leading:<br/>❤️ Icon favorite<br/>red, 40px]
-            Tile2 --> T2[title:<br/>Carte 2<br/>bold]
+            Tile2 --> L2[leading:<br/>Icon favorite<br/>couleur rouge<br/>taille 40px]
+            Tile2 --> T2[title:<br/>Carte 2<br/>style bold]
             Tile2 --> S2[subtitle:<br/>Description<br/>de la carte 2]
-            Tile2 --> Tr2[trailing:<br/>▶ arrow_forward_ios]
+            Tile2 --> Tr2[trailing:<br/>Icon arrow<br/>forward ios]
         end
         
         Label --> Carte1
         Carte1 --> Carte2
     end
     
-    style Carte1 fill:#fff9c4
-    style Carte2 fill:#fff9c4
-    style Card1 fill:#ffffff
-    style Card2 fill:#ffffff
+    style SectionCartesWidget fill:#FAFAFA,stroke:#424242,stroke-width:2px,color:#000
+    style Label fill:#E0E0E0,stroke:#757575,stroke-width:1px,color:#000
+    style Carte1 fill:#FFF8E1,stroke:#FFA726,stroke-width:2px,color:#000
+    style Carte2 fill:#FFEBEE,stroke:#E57373,stroke-width:2px,color:#000
+    style Card1 fill:#FFFFFF,stroke:#BDBDBD,stroke-width:1px,color:#000
+    style Card2 fill:#FFFFFF,stroke:#BDBDBD,stroke-width:1px,color:#000
+    style Tile1 fill:#FAFAFA,stroke:#E0E0E0,stroke-width:1px,color:#000
+    style Tile2 fill:#FAFAFA,stroke:#E0E0E0,stroke-width:1px,color:#000
+    style L1 fill:#FFE082,stroke:#FFA726,stroke-width:1px,color:#000
+    style L2 fill:#FFCDD2,stroke:#E57373,stroke-width:1px,color:#000
 ```
 
 ## 6. SectionIcones - Disposition des Icônes
 
 ```mermaid
-graph LR
-    subgraph "SectionIcones - Row (spaceAround)"
-        direction LR
+graph TB
+    subgraph SectionIconesWidget["SectionIcones - Row avec spaceAround"]
+        direction TB
         
-        S1[espace]
+        LabelIcones[Text: Collection d'icônes]
         
-        subgraph Icon1["Column"]
-            I1[🏠<br/>Icon home<br/>blue, 40px]
-            T1[Home<br/>12px]
-            I1 --> T1
+        subgraph RowIcones["Row - 4 icônes avec labels"]
+            direction LR
+            
+            S1[espace]
+            
+            subgraph Icon1Col["Column 1"]
+                I1[Icon home<br/>couleur bleu<br/>taille 40px]
+                T1[Text: Home<br/>taille 12px]
+                I1 --> T1
+            end
+            
+            S2[espace]
+            
+            subgraph Icon2Col["Column 2"]
+                I2[Icon person<br/>couleur vert<br/>taille 40px]
+                T2[Text: Profil<br/>taille 12px]
+                I2 --> T2
+            end
+            
+            S3[espace]
+            
+            subgraph Icon3Col["Column 3"]
+                I3[Icon settings<br/>couleur gris<br/>taille 40px]
+                T3[Text: Paramètres<br/>taille 12px]
+                I3 --> T3
+            end
+            
+            S4[espace]
+            
+            subgraph Icon4Col["Column 4"]
+                I4[Icon notifications<br/>couleur orange<br/>taille 40px]
+                T4[Text: Alertes<br/>taille 12px]
+                I4 --> T4
+            end
+            
+            S5[espace]
+            
+            S1 -.-> Icon1Col
+            Icon1Col -.-> S2
+            S2 -.-> Icon2Col
+            Icon2Col -.-> S3
+            S3 -.-> Icon3Col
+            Icon3Col -.-> S4
+            S4 -.-> Icon4Col
+            Icon4Col -.-> S5
         end
         
-        S2[espace]
-        
-        subgraph Icon2["Column"]
-            I2[👤<br/>Icon person<br/>green, 40px]
-            T2[Profil<br/>12px]
-            I2 --> T2
-        end
-        
-        S3[espace]
-        
-        subgraph Icon3["Column"]
-            I3[⚙️<br/>Icon settings<br/>grey, 40px]
-            T3[Paramètres<br/>12px]
-            I3 --> T3
-        end
-        
-        S4[espace]
-        
-        subgraph Icon4["Column"]
-            I4[🔔<br/>Icon notifications<br/>orange, 40px]
-            T4[Alertes<br/>12px]
-            I4 --> T4
-        end
-        
-        S5[espace]
-        
-        S1 -.-> Icon1
-        Icon1 -.-> S2
-        S2 -.-> Icon2
-        Icon2 -.-> S3
-        S3 -.-> Icon3
-        Icon3 -.-> S4
-        S4 -.-> Icon4
-        Icon4 -.-> S5
+        LabelIcones --> RowIcones
     end
     
-    style Icon1 fill:#e3f2fd
-    style Icon2 fill:#e8f5e9
-    style Icon3 fill:#f5f5f5
-    style Icon4 fill:#fff3e0
+    style SectionIconesWidget fill:#FAFAFA,stroke:#424242,stroke-width:2px,color:#000
+    style LabelIcones fill:#E0E0E0,stroke:#757575,stroke-width:1px,color:#000
+    style RowIcones fill:#F5F5F5,stroke:#9E9E9E,stroke-width:2px,color:#000
+    style Icon1Col fill:#E3F2FD,stroke:#42A5F5,stroke-width:2px,color:#000
+    style Icon2Col fill:#E8F5E9,stroke:#66BB6A,stroke-width:2px,color:#000
+    style Icon3Col fill:#EEEEEE,stroke:#78909C,stroke-width:2px,color:#000
+    style Icon4Col fill:#FFF3E0,stroke:#FFB74D,stroke-width:2px,color:#000
+    style S1 fill:#FAFAFA,stroke:#E0E0E0,stroke-width:1px,stroke-dasharray: 5 5,color:#999
+    style S2 fill:#FAFAFA,stroke:#E0E0E0,stroke-width:1px,stroke-dasharray: 5 5,color:#999
+    style S3 fill:#FAFAFA,stroke:#E0E0E0,stroke-width:1px,stroke-dasharray: 5 5,color:#999
+    style S4 fill:#FAFAFA,stroke:#E0E0E0,stroke-width:1px,stroke-dasharray: 5 5,color:#999
+    style S5 fill:#FAFAFA,stroke:#E0E0E0,stroke-width:1px,stroke-dasharray: 5 5,color:#999
 ```
 
 ## 7. BoutonDecoratif - Architecture en Couches
 
 ```mermaid
 graph TB
-    subgraph "BoutonDecoratif - Layers"
-        Layer1[Container<br/>📦 Couche 1]
-        Layer1Desc[BoxDecoration:<br/>- LinearGradient: blue→purple<br/>- BorderRadius: 30px<br/>- BoxShadow: blue shadow]
+    subgraph BoutonWidget["BoutonDecoratif - 5 Couches Imbriquées"]
         
-        Layer2[Material<br/>🎨 Couche 2]
-        Layer2Desc[color: transparent]
+        Layer1[Couche 1: Container<br/>Conteneur principal]
+        Layer1Desc[BoxDecoration:<br/>- LinearGradient bleu vers violet<br/>- BorderRadius 30px forme pilule<br/>- BoxShadow ombre bleue floue]
         
-        Layer3[InkWell<br/>👆 Couche 3]
-        Layer3Desc[onTap: <br/>borderRadius: 30px<br/>effet d'ondulation]
+        Layer2[Couche 2: Material<br/>Surface Material Design]
+        Layer2Desc[Propriété:<br/>color transparent<br/>permet de voir le gradient]
         
-        Layer4[Padding<br/>📏 Couche 4]
-        Layer4Desc[horizontal: 40px<br/>vertical: 15px]
+        Layer3[Couche 3: InkWell<br/>Zone interactive]
+        Layer3Desc[Propriétés:<br/>onTap pour action<br/>borderRadius 30px<br/>effet ondulation au clic]
         
-        Layer5[Text<br/>📝 Couche 5]
-        Layer5Desc['Bouton Exemple'<br/>white, bold, 18px]
+        Layer4[Couche 4: Padding<br/>Espacement interne]
+        Layer4Desc[EdgeInsets:<br/>horizontal 40px<br/>vertical 16px]
+        
+        Layer5[Couche 5: Text<br/>Contenu textuel]
+        Layer5Desc[Style:<br/>Bouton Exemple<br/>blanc, bold, 18px<br/>letterSpacing 0.5]
         
         Layer1 --> Layer1Desc
         Layer1 --> Layer2
@@ -312,12 +373,17 @@ graph TB
         Layer5 --> Layer5Desc
     end
     
-    style Layer1 fill:#e1bee7
-    style Layer2 fill:#ce93d8
-    style Layer3 fill:#ba68c8
-    style Layer4 fill:#ab47bc
-    style Layer5 fill:#9c27b0
-    style Layer5Desc fill:#ffffff,color:#000
+    style BoutonWidget fill:#FAFAFA,stroke:#424242,stroke-width:3px,color:#000
+    style Layer1 fill:#E1BEE7,stroke:#8E24AA,stroke-width:2px,color:#000
+    style Layer2 fill:#CE93D8,stroke:#8E24AA,stroke-width:2px,color:#000
+    style Layer3 fill:#BA68C8,stroke:#8E24AA,stroke-width:2px,color:#000
+    style Layer4 fill:#AB47BC,stroke:#8E24AA,stroke-width:2px,color:#fff
+    style Layer5 fill:#9C27B0,stroke:#8E24AA,stroke-width:2px,color:#fff
+    style Layer1Desc fill:#F3E5F5,stroke:#BA68C8,stroke-width:1px,color:#000
+    style Layer2Desc fill:#F3E5F5,stroke:#BA68C8,stroke-width:1px,color:#000
+    style Layer3Desc fill:#F3E5F5,stroke:#BA68C8,stroke-width:1px,color:#000
+    style Layer4Desc fill:#F3E5F5,stroke:#BA68C8,stroke-width:1px,color:#000
+    style Layer5Desc fill:#F3E5F5,stroke:#BA68C8,stroke-width:1px,color:#000
 ```
 
 ## 8. Flux de Construction des Widgets
@@ -332,9 +398,16 @@ sequenceDiagram
     participant Body as Body Widgets
     
     Main->>App: runApp()
+    Note over App: Instanciation du<br/>widget racine
+    
     App->>Mat: build(context)
+    Note over Mat: Configuration du<br/>MaterialApp + Theme
+    
     Mat->>Page: home: PageAccueil()
+    Note over Page: Création de la<br/>page principale
+    
     Page->>Scaffold: build(context)
+    Note over Scaffold: Structure de page<br/>Material Design
     
     Scaffold->>Scaffold: Créer AppBar
     Scaffold->>Body: Créer Body
@@ -347,18 +420,22 @@ sequenceDiagram
     Body->>Body: SectionIcones.build()
     Body->>Body: BoutonDecoratif.build()
     
+    Note over Body: Tous les widgets<br/>sont construits
+    
     Body-->>Scaffold: Widget tree complet
     Scaffold-->>Page: Scaffold configuré
     Page-->>Mat: Page construite
     Mat-->>App: MaterialApp configuré
-    App-->>Main: Application lancée ✓
+    App-->>Main: Application lancée
+    
+    Note over Main,Body: L'interface est affichée<br/>à l'écran
 ```
 
 ## 9. Types de Widgets Utilisés
 
 ```mermaid
 mindmap
-  root((Widgets Flutter))
+  root((Widgets<br/>Flutter))
     Stateless Custom
       MonApplication
       PageAccueil
@@ -395,63 +472,71 @@ mindmap
 
 ```mermaid
 graph LR
-    subgraph "Flux des Paramètres"
-        Parent[PageAccueil]
+    subgraph PropsFlow["Flux des Paramètres - Top Down"]
+        Parent[PageAccueil<br/>Widget parent]
         
-        Parent -->|titre: String| W1[TitreSection]
+        Parent -->|titre: String| W1[TitreSection<br/>Widget enfant]
         
-        Parent -->|couleur: Color<br/>texte: String| W2[ContainerColore]
+        Parent -->|couleur: Color<br/>texte: String| W2[ContainerColore<br/>Widget enfant]
         
-        Parent -->|Pas de paramètres| W3[SectionRow]
+        Parent -->|Aucun paramètre| W3[SectionRow<br/>Widget enfant]
         
-        Parent -->|Pas de paramètres| W4[SectionCartes]
-        W4 -->|titre: String<br/>sousTitre: String<br/>icone: IconData<br/>couleurIcone: Color| C1[CarteInfo 1]
-        W4 -->|titre: String<br/>sousTitre: String<br/>icone: IconData<br/>couleurIcone: Color| C2[CarteInfo 2]
+        Parent -->|Aucun paramètre| W4[SectionCartes<br/>Widget enfant]
         
-        Parent -->|Pas de paramètres| W5[SectionIcones]
+        W4 -->|titre: String<br/>sousTitre: String<br/>icone: IconData<br/>couleurIcone: Color| C1[CarteInfo 1<br/>Widget petit-enfant]
         
-        Parent -->|texte: String| W6[BoutonDecoratif]
+        W4 -->|titre: String<br/>sousTitre: String<br/>icone: IconData<br/>couleurIcone: Color| C2[CarteInfo 2<br/>Widget petit-enfant]
+        
+        Parent -->|Aucun paramètre| W5[SectionIcones<br/>Widget enfant]
+        
+        Parent -->|texte: String| W6[BoutonDecoratif<br/>Widget enfant]
     end
     
-    style Parent fill:#ffeb3b
-    style W1 fill:#c8e6c9
-    style W2 fill:#c8e6c9
-    style W3 fill:#c8e6c9
-    style W4 fill:#c8e6c9
-    style W5 fill:#c8e6c9
-    style W6 fill:#c8e6c9
-    style C1 fill:#a5d6a7
-    style C2 fill:#a5d6a7
+    style PropsFlow fill:#FAFAFA,stroke:#424242,stroke-width:2px,color:#000
+    style Parent fill:#FFF9C4,stroke:#F57C00,stroke-width:3px,color:#000
+    style W1 fill:#C8E6C9,stroke:#43A047,stroke-width:2px,color:#000
+    style W2 fill:#C8E6C9,stroke:#43A047,stroke-width:2px,color:#000
+    style W3 fill:#C8E6C9,stroke:#43A047,stroke-width:2px,color:#000
+    style W4 fill:#C8E6C9,stroke:#43A047,stroke-width:2px,color:#000
+    style W5 fill:#C8E6C9,stroke:#43A047,stroke-width:2px,color:#000
+    style W6 fill:#C8E6C9,stroke:#43A047,stroke-width:2px,color:#000
+    style C1 fill:#A5D6A7,stroke:#2E7D32,stroke-width:2px,color:#000
+    style C2 fill:#A5D6A7,stroke:#2E7D32,stroke-width:2px,color:#000
 ```
 
 ## 11. Cycle de Vie des Stateless Widgets
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Création: Widget instancié
-    Création --> Build: build() appelé
+    [*] --> Creation: Widget instancié
+    Creation --> Build: build() appelé
     Build --> Rendu: Widget tree construit
-    Rendu --> Affichage: Pixels sur l'écran
+    Rendu --> Affichage: Rendu sur l'écran
     
-    Affichage --> Build: Parent change
+    Affichage --> Build: Parent reconstruit
     Affichage --> [*]: Widget détruit
     
-    note right of Création
+    note right of Creation
         const MonWidget({
           required this.data
         })
+        Construction du widget
+        avec paramètres
     end note
     
     note right of Build
         Widget build(BuildContext context) {
           return Container(...);
         }
+        Création de l'arbre
+        des widgets enfants
     end note
     
     note right of Affichage
         Widget affiché à l'écran
         Pas de setState()
-        Immuable
+        Immuable (final fields)
+        Ne peut pas changer
     end note
 ```
 
@@ -459,25 +544,28 @@ stateDiagram-v2
 
 ```mermaid
 graph TB
-    subgraph Screen["📱 Écran de l'Application"]
-        subgraph AppBarZone["┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓<br/>┃ Démonstration Stateless Widgets ┃<br/>┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛"]
+    subgraph Screen["Ecran de l'Application Flutter"]
+        subgraph AppBarZone["AppBar - Barre superieure"]
+            AppBarContent[Demonstration Stateless Widgets<br/>Titre centre, fond bleu, texte blanc]
         end
         
-        subgraph ScrollZone["Zone Défilante (SingleChildScrollView)"]
-            Zone1["<br/>Bienvenue dans Flutter!<br/>(Titre 28px, bleu, centré)<br/>"]
+        subgraph ScrollZone["Zone Defilante - SingleChildScrollView"]
+            Zone1[TitreSection<br/>Bienvenue dans Flutter!<br/>Titre 28px, bleu fonce, centre]
             
-            Zone2["┌─────────────────────────────┐<br/>│ Container avec fond bleu    │<br/>│  (BorderRadius, Shadow)     │<br/>└─────────────────────────────┘"]
+            Zone2[ContainerColore<br/>Container avec fond colore<br/>BorderRadius 15px, BoxShadow<br/>Texte blanc 18px centre]
             
-            Zone3["Exemple de Row:<br/>┌─────┐  ┌─────┐  ┌─────┐<br/>│Box 1│  │Box 2│  │Box 3│<br/>│ 🔴  │  │ 🟢  │  │ 🟠  │<br/>└─────┘  └─────┘  └─────┘"]
+            Zone3[SectionRow<br/>Exemple de Row disposition horizontale<br/>3 Containers 100x100: rouge, vert, orange<br/>Alignement spaceEvenly]
             
-            Zone4["Exemples de Cards:<br/>┌──────────────────────────┐<br/>│ ⭐ Carte 1          ▶    │<br/>│    Description...        │<br/>└──────────────────────────┘<br/>┌──────────────────────────┐<br/>│ ❤️  Carte 2          ▶    │<br/>│    Description...        │<br/>└──────────────────────────┘"]
+            Zone4[SectionCartes<br/>Exemples de Cards Material Design<br/>Card 1: Icon star amber + texte<br/>Card 2: Icon favorite rouge + texte<br/>ListTile avec leading, title, subtitle, trailing]
             
-            Zone5["Collection d'icônes:<br/>🏠    👤    ⚙️    🔔<br/>Home Profil Param Alertes"]
+            Zone5[SectionIcones<br/>Collection d'icones avec labels<br/>Row spaceAround avec 4 Columns<br/>Icons: home, person, settings, notifications<br/>Taille 40px avec labels 12px]
             
-            Zone6["┌────────────────────────┐<br/>│   Bouton Exemple       │<br/>│ (Gradient blue→purple) │<br/>└────────────────────────┘"]
+            Zone6[BoutonDecoratif<br/>Bouton avec gradient bleu vers violet<br/>BorderRadius 30px forme pilule<br/>BoxShadow + InkWell effet tactile<br/>Texte blanc bold 18px centre]
         end
         
-        FABZone["                    ┌─────┐<br/>                    │  +  │<br/>                    └─────┘"]
+        subgraph FABZone["FloatingActionButton"]
+            FABContent[Bouton flottant<br/>Icon add +<br/>Fond bleu, icone blanche]
+        end
         
         AppBarZone --> Zone1
         Zone1 --> Zone2
@@ -485,82 +573,139 @@ graph TB
         Zone3 --> Zone4
         Zone4 --> Zone5
         Zone5 --> Zone6
+        Zone6 -.-> FABZone
     end
     
-    style AppBarZone fill:#2196f3,color:#fff
-    style Zone1 fill:#e3f2fd
-    style Zone2 fill:#bbdefb
-    style Zone3 fill:#90caf9
-    style Zone4 fill:#64b5f6
-    style Zone5 fill:#42a5f5
-    style Zone6 fill:#2196f3,color:#fff
-    style FABZone fill:#ff9800,color:#fff
+    style Screen fill:#F5F5F5,stroke:#424242,stroke-width:3px,color:#000
+    style AppBarZone fill:#1976D2,stroke:#0D47A1,stroke-width:2px,color:#fff
+    style AppBarContent fill:#1565C0,stroke:#0D47A1,stroke-width:1px,color:#fff
+    style ScrollZone fill:#FAFAFA,stroke:#9E9E9E,stroke-width:2px,color:#000
+    style Zone1 fill:#E3F2FD,stroke:#1976D2,stroke-width:1px,color:#000
+    style Zone2 fill:#BBDEFB,stroke:#1976D2,stroke-width:1px,color:#000
+    style Zone3 fill:#90CAF9,stroke:#1976D2,stroke-width:1px,color:#000
+    style Zone4 fill:#64B5F6,stroke:#1976D2,stroke-width:1px,color:#000
+    style Zone5 fill:#42A5F5,stroke:#1976D2,stroke-width:1px,color:#000
+    style Zone6 fill:#1E88E5,stroke:#1976D2,stroke-width:1px,color:#fff
+    style FABZone fill:#FF6F00,stroke:#E65100,stroke-width:2px,color:#fff
+    style FABContent fill:#FB8C00,stroke:#E65100,stroke-width:1px,color:#fff
 ```
 
 ## 13. Comparaison Row vs Column
 
 ```mermaid
 graph TB
-    subgraph Comparison["Comparaison Layout"]
-        subgraph Col["Column (Vertical)"]
+    subgraph Comparison["Comparaison des Layouts"]
+        
+        subgraph ColLayout["Column - Disposition Verticale"]
             direction TB
-            C1[Widget 1]
-            C2[Widget 2]
-            C3[Widget 3]
+            C1[Widget 1<br/>Premier enfant]
+            C2[Widget 2<br/>Deuxieme enfant]
+            C3[Widget 3<br/>Troisieme enfant]
             C1 --> C2
             C2 --> C3
-            CLabel[mainAxis: vertical ⬇️<br/>crossAxis: horizontal ↔️]
+            CLabel[Main Axis: vertical vers le bas<br/>Cross Axis: horizontal gauche-droite<br/>MainAxisAlignment pour vertical<br/>CrossAxisAlignment pour horizontal]
         end
         
-        subgraph RowG["Row (Horizontal)"]
+        subgraph RowLayout["Row - Disposition Horizontale"]
             direction LR
-            R1[Widget 1]
-            R2[Widget 2]
-            R3[Widget 3]
+            R1[Widget 1<br/>Premier<br/>enfant]
+            R2[Widget 2<br/>Deuxieme<br/>enfant]
+            R3[Widget 3<br/>Troisieme<br/>enfant]
             R1 --> R2
             R2 --> R3
-            RLabel[mainAxis: horizontal ➡️<br/>crossAxis: vertical ⬍]
+            RLabel[Main Axis: horizontal gauche-droite<br/>Cross Axis: vertical haut-bas<br/>MainAxisAlignment pour horizontal<br/>CrossAxisAlignment pour vertical]
         end
     end
     
-    style C1 fill:#ffcdd2
-    style C2 fill:#f8bbd0
-    style C3 fill:#e1bee7
-    style R1 fill:#c5cae9
-    style R2 fill:#bbdefb
-    style R3 fill:#b2ebf2
+    style Comparison fill:#FAFAFA,stroke:#424242,stroke-width:3px,color:#000
+    style ColLayout fill:#F3E5F5,stroke:#8E24AA,stroke-width:2px,color:#000
+    style RowLayout fill:#E8F5E9,stroke:#43A047,stroke-width:2px,color:#000
+    style C1 fill:#FFCDD2,stroke:#E57373,stroke-width:2px,color:#000
+    style C2 fill:#F8BBD0,stroke:#F06292,stroke-width:2px,color:#000
+    style C3 fill:#E1BEE7,stroke:#BA68C8,stroke-width:2px,color:#000
+    style R1 fill:#C5CAE9,stroke:#7986CB,stroke-width:2px,color:#000
+    style R2 fill:#BBDEFB,stroke:#64B5F6,stroke-width:2px,color:#000
+    style R3 fill:#B2EBF2,stroke:#4DD0E1,stroke-width:2px,color:#000
+    style CLabel fill:#FCE4EC,stroke:#F06292,stroke-width:1px,color:#000
+    style RLabel fill:#E0F2F1,stroke:#4DB6AC,stroke-width:1px,color:#000
 ```
 
 ---
 
-## Légende des Symboles
+## Legende
 
-| Symbole | Signification |
-|---------|--------------|
-| 📱 | Application/Écran |
-| 📦 | Container |
-| 📝 | Text |
-| 🎨 | Material/Style |
-| 👆 | Interactive (InkWell) |
-| 📏 | Padding/Spacing |
-| ⬇️ | Direction verticale |
-| ➡️ | Direction horizontale |
-| 🔵 🔴 🟢 🟠 | Couleurs |
-| ⭐ ❤️ 🏠 👤 ⚙️ 🔔 | Icônes |
+| Terme | Signification |
+|-------|--------------|
+| **Widget** | Composant de l'interface Flutter |
+| **Stateless** | Widget immuable sans état interne |
+| **Container** | Boîte avec décoration et contraintes |
+| **Column** | Disposition verticale des enfants |
+| **Row** | Disposition horizontale des enfants |
+| **Card** | Surface Material Design avec élévation |
+| **Scaffold** | Structure de base d'une page Material |
+| **AppBar** | Barre d'application en haut de l'écran |
+| **FAB** | FloatingActionButton - Bouton flottant |
+| **Main Axis** | Axe principal de la disposition |
+| **Cross Axis** | Axe perpendiculaire à l'axe principal |
+| **Elevation** | Hauteur visuelle d'une surface (ombre) |
+| **Theme** | Configuration globale du style visuel |
 
 ---
 
-## Comment Utiliser ces Diagrammes
+## Convention de Couleurs dans les Diagrammes
 
-1. **Pour comprendre la structure globale** : Voir diagrammes 1 et 2
-2. **Pour comprendre les layouts** : Voir diagrammes 3, 4, 13
-3. **Pour comprendre un widget spécifique** : Voir diagrammes 5, 6, 7
-4. **Pour comprendre le flux de données** : Voir diagrammes 8, 10, 11
-5. **Pour visualiser l'écran final** : Voir diagramme 12
+- **Bleu clair** (#E3F2FD - #42A5F5) : Widgets principaux, structure
+- **Vert clair** (#E8F5E9 - #66BB6A) : Widgets personnalisés
+- **Orange/Jaune** (#FFF3E0 - #FFB74D) : Points d'entrée, actions
+- **Violet clair** (#F3E5F5 - #AB47BC) : Couches, architecture
+- **Gris clair** (#FAFAFA - #9E9E9E) : Espacement, métadonnées
+- **Rouge clair** (#FFEBEE - #E57373) : Accents, avertissements
 
-Ces diagrammes peuvent être visualisés dans :
-- GitHub (supporte Mermaid nativement)
-- VS Code (avec extension Mermaid Preview)
-- Sites web comme mermaid.live
-- Documentation générée (GitBook, MkDocs, etc.)
+---
 
+## Utilisation des Diagrammes
+
+### Pour les Étudiants
+
+1. **Commencer par le diagramme 1** pour voir la vue d'ensemble
+2. **Consulter le diagramme 2** pour la hiérarchie complète
+3. **Étudier les diagrammes 3, 4, 13** pour comprendre les layouts
+4. **Analyser les diagrammes 5, 6, 7** pour les widgets spécifiques
+5. **Examiner les diagrammes 8, 10, 11** pour le flux de données
+
+### Visualisation
+
+Ces diagrammes Mermaid peuvent être visualisés dans :
+
+- **GitHub** : Rendu automatique des diagrammes Mermaid
+- **VS Code** : Extension "Markdown Preview Mermaid Support"
+- **En ligne** : [mermaid.live](https://mermaid.live) ou [mermaid-js.github.io](https://mermaid-js.github.io/mermaid-live-editor)
+- **Documentation** : GitBook, MkDocs, Docusaurus (support natif)
+
+### Export
+
+Pour exporter en image :
+1. Copier le code Mermaid
+2. Ouvrir [mermaid.live](https://mermaid.live)
+3. Coller le code
+4. Cliquer sur "Export" (PNG, SVG, PDF)
+
+---
+
+## Notes Pédagogiques
+
+### Points Clés à Retenir
+
+1. **Composition** : Flutter utilise la composition de widgets simples pour créer des interfaces complexes
+2. **Immutabilité** : Les Stateless Widgets sont immuables (const, final)
+3. **Hiérarchie** : L'arbre des widgets définit la structure de l'interface
+4. **Props Flow** : Les données descendent du parent vers les enfants
+5. **Build Method** : Chaque widget définit son rendu via build()
+
+### Exercices Suggérés
+
+1. Identifier le widget racine dans le diagramme 1
+2. Tracer le chemin de main() jusqu'à un widget Text
+3. Compter le nombre de niveaux dans la hiérarchie
+4. Expliquer la différence entre Row et Column
+5. Dessiner un nouveau widget personnalisé et son intégration
