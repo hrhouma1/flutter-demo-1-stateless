@@ -66,6 +66,100 @@ Paramètres --(AppBar Back)--> Accueil
 
 # Annexes – Interactions utilisateur → Réactions UI 
 
+got it — voilà des versions **verticales**. Choisis celle qui te convient.
+
+---
+
+## Option A — 3 blocs séparés (toujours l’un sous l’autre)
+
+### Accueil
+
+```mermaid
+flowchart TD
+  %% ECRAN ACCUEIL (vertical)
+  direction TB
+  MaterialApp --> A_Scaffold[Scaffold]
+  A_Scaffold --> A_AppBar[AppBar: Accueil]
+  A_Scaffold --> A_Body[Body: SingleChildScrollView]
+  A_Scaffold --> A_FAB[FloatingActionButton: add_alert]
+  A_Body --> A_Column[Column]
+  A_Column --> A_Titre[Text: Bienvenue]
+  A_Column --> A_Bandeau[Container: bandeau info]
+  A_Column --> A_Grille[Row/Wrap: 3 Cards]
+  A_Column --> A_Bouton[Bouton decoratif]
+```
+
+### Détail
+
+```mermaid
+flowchart TD
+  %% ECRAN DETAIL (vertical)
+  direction TB
+  D_Scaffold[Scaffold] --> D_AppBar[AppBar: titre dynamique]
+  D_Scaffold --> D_Body[Body: Column]
+  D_Body --> D_Image[Image/Hero]
+  D_Body --> D_Texte[Text descriptif]
+  D_Body --> D_Actions[Row: Boutons]
+```
+
+### Paramètres
+
+```mermaid
+flowchart TD
+  %% ECRAN PARAMETRES (vertical)
+  direction TB
+  P_Scaffold[Scaffold] --> P_AppBar[AppBar: Parametres]
+  P_Scaffold --> P_List[ListView]
+  P_List --> P_Switch[Switch: Theme]
+  P_List --> P_Radio[Radio: Langue]
+```
+
+---
+
+## Option B — 1 seul bloc, forcé en pile (subgraphs + direction TB)
+
+```mermaid
+flowchart TD
+  %% Forcer l’empilement vertical via une chaîne "Accueil -> Detail -> Parametres"
+  A_anchor --> D_anchor --> P_anchor
+
+  %% Subgraph 1
+  subgraph Accueil
+    direction TB
+    MaterialApp --> A_Scaffold[Scaffold]
+    A_Scaffold --> A_AppBar[AppBar: Accueil]
+    A_Scaffold --> A_Body[Body: SingleChildScrollView]
+    A_Scaffold --> A_FAB[FloatingActionButton: add_alert]
+    A_Body --> A_Column[Column]
+    A_Column --> A_Titre[Text: Bienvenue]
+    A_Column --> A_Bandeau[Container: bandeau info]
+    A_Column --> A_Grille[Row/Wrap: 3 Cards]
+    A_Column --> A_Bouton[Bouton decoratif]
+  end
+
+  %% Subgraph 2
+  subgraph Detail
+    direction TB
+    D_Scaffold[Scaffold] --> D_AppBar[AppBar: titre dynamique]
+    D_Scaffold --> D_Body[Body: Column]
+    D_Body --> D_Image[Image/Hero]
+    D_Body --> D_Texte[Text descriptif]
+    D_Body --> D_Actions[Row: Boutons]
+  end
+
+  %% Subgraph 3
+  subgraph Parametres
+    direction TB
+    P_Scaffold[Scaffold] --> P_AppBar[AppBar: Parametres]
+    P_Scaffold --> P_List[ListView]
+    P_List --> P_Switch[Switch: Theme]
+    P_List --> P_Radio[Radio: Langue]
+  end
+```
+
+> Astuce GitHub : si jamais les subgraphs se remettent côte à côte, garde **Option A** (3 blocs distincts). C’est le plus fiable pour un rendu strictement vertical.
+
+
 
 ## Arborescence des Widgets 
 
