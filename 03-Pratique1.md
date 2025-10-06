@@ -148,23 +148,8 @@ flowchart LR
 
 # Partie 3 — Interactions UI (Mermaid, corrigé)
 
-```mermaid
-flowchart LR
-  TapFAB((Tap FAB)) --> SnackFAB[SnackBar: Action executee]
-  TapCarte1((Tap Carte 1)) --> SnackC1[SnackBar: Carte 1]
-  TapCarte2((Tap Carte 2)) --> GoDetail[Navigate to Detail (id)]
-  TapIconParams((Tap Icon Parametres)) --> GoSettings[Navigate to Parametres]
-  ToggleTheme((Switch Theme)) --> Recompute[Recompute color scheme]
-```
 
-
-
-top — voici **plusieurs versions 100% compatibles GitHub** pour ta *Partie 3 — Interactions UI*.
-Tu peux en choisir une ou les proposer toutes aux étudiants.
-
----
-
-## Version A — Flowchart simple (IDs sûrs, labels FR sans accents)
+## Version A — Flowchart  
 
 ```mermaid
 flowchart LR
@@ -175,7 +160,7 @@ flowchart LR
   ToggleTheme((Switch Theme)) --> Recompute[Recompute color scheme]
 ```
 
----
+
 
 ## Version B — Flowchart avec déclaration des nœuds puis liens
 
@@ -205,9 +190,9 @@ flowchart LR
   ToggleTheme --> Recompute
 ```
 
----
 
-## Version C — Flowchart avec sous-graphes (structure lisible)
+
+## Version C — Flowchart avec sous-graphes 
 
 ```mermaid
 flowchart TD
@@ -234,9 +219,8 @@ flowchart TD
   ToggleTheme --> Recompute
 ```
 
----
 
-## Version D — Sequence Diagram (souvent plus robuste sur GitHub)
+## Version D — Sequence Diagram 
 
 ```mermaid
 sequenceDiagram
@@ -258,9 +242,9 @@ sequenceDiagram
   A->>N: push(Parametres)
 ```
 
----
 
-## Version E — Flowchart ultra-compact (une interaction par ligne)
+
+## Version E — interaction 
 
 ```mermaid
 flowchart LR
@@ -271,17 +255,7 @@ flowchart LR
   U5((Switch Theme)) --> R5[Recompute color scheme]
 ```
 
----
 
-### Tips “GitHub qui râle”
-
-* **IDs sans espaces/accents/signes** (ex.: `TapIconParams`, pas `Tap Icon Paramètres`).
-* Les **accents** sont ok dans les **labels** (`[...]` ou `((...))`) mais si ça casse, remplace-les par ASCII.
-* **Une flèche par ligne** ; pas de coupure de ligne au milieu.
-* Pas de `#` dans les labels; évite aussi les guillemets si possible.
-* Si besoin, remplace `(id)` par `id` dans les labels.
-
-Tu veux que je génère aussi la **Partie 1 (arborescence)** et **Partie 2 (navigation)** en plusieurs variantes GitHub-safe ?
 
 
 
