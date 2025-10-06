@@ -66,11 +66,8 @@ Paramètres --(AppBar Back)--> Accueil
 
 # Annexes – Interactions utilisateur → Réactions UI 
 
-got it — voilà des versions **verticales**. Choisis celle qui te convient.
 
----
 
-## Option A — 3 blocs séparés (toujours l’un sous l’autre)
 
 ### Accueil
 
@@ -114,9 +111,9 @@ flowchart TD
   P_List --> P_Radio[Radio: Langue]
 ```
 
----
 
-## Option B — 1 seul bloc, forcé en pile (subgraphs + direction TB)
+
+## Vision avec 1 seul bloc en pile
 
 ```mermaid
 flowchart TD
@@ -157,7 +154,6 @@ flowchart TD
   end
 ```
 
-> Astuce GitHub : si jamais les subgraphs se remettent côte à côte, garde **Option A** (3 blocs distincts). C’est le plus fiable pour un rendu strictement vertical.
 
 
 
