@@ -395,11 +395,14 @@ class BoutonDecoratif extends StatelessWidget {
 // class PageDetail extends StatelessWidget { ... }
 ```
 
----
 
-## Corrigé minimal (enseignant)
 
-> Ne le donne pas aux étudiants avant la remise 😉
+<br/>
+<br/>
+
+# Corrigé minimal 
+
+> Ne regardez pas cette partie avant de me remettre votre travail 😉
 
 ```dart
 // ——— Correctifs principaux ———
