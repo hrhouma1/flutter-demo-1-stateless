@@ -1,4 +1,3 @@
-
 # Pratique 1
 
 
