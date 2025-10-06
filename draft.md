@@ -1,4 +1,4 @@
-Parfait. Voici un **énoncé d’exercice “interfaces sans code”** où les étudiant·e·s ne livrent **que des diagrammes Mermaid** (pas de Dart, pas de Flutter code). Tu peux le coller tel quel dans Thinkific/Moodle.
+
 
 # Exercice — Concevoir des interfaces Flutter (sans code) avec Mermaid
 
@@ -182,6 +182,4 @@ flowchart LR
   %% TODO: actions utilisateur -> réactions UI (SnackBar, navigation, disabled/enabled, loader)
 ```
 
----
 
-Si tu veux, je peux aussi te préparer **une grille de correction** (checklist) pour corriger rapidement les diagrammes, ou te générer **une version “corrigé prof”** en Mermaid pour comparaison (sans code, toujours 100% stateless).
