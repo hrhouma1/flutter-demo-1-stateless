@@ -77,6 +77,41 @@ Cette application Flutter démontre l'utilisation des **Stateless Widgets** avec
 └─────────────────────────────────────────────────────┘
 ```
 
+
+```mermaid
+graph TD
+    A[main] -->|runApp| B[MonApplication]
+    B -->|MaterialApp| C[PageAccueil]
+    C -->|Scaffold| D[Structure de Page]
+    
+    D --> E[AppBar]
+    D --> F[Body]
+    D --> G[FloatingActionButton]
+    
+    E --> E1[Text: Démonstration Stateless Widgets]
+    
+    F --> H[SingleChildScrollView]
+    H --> I[Column]
+    
+    I --> J1[TitreSection]
+    I --> J2[ContainerColore]
+    I --> J3[SectionRow]
+    I --> J4[SectionCartes]
+    I --> J5[SectionIcones]
+    I --> J6[BoutonDecoratif]
+    
+    G --> G1[Icon: add]
+    
+    style A fill:#E3F2FD,stroke:#1976D2,stroke-width:2px,color:#000
+    style B fill:#E8F5E9,stroke:#43A047,stroke-width:2px,color:#000
+    style C fill:#FFF9C4,stroke:#F57C00,stroke-width:2px,color:#000
+    style D fill:#E1BEE7,stroke:#8E24AA,stroke-width:2px,color:#000
+    style E fill:#BBDEFB,stroke:#1976D2,stroke-width:1px,color:#000
+    style F fill:#C8E6C9,stroke:#43A047,stroke-width:1px,color:#000
+    style G fill:#FFCCBC,stroke:#E64A19,stroke-width:1px,color:#000
+```
+
+
 ---
 
 ## Hiérarchie des Widgets
