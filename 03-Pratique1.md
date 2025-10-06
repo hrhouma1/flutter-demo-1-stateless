@@ -64,7 +64,7 @@ Paramètres --(AppBar Back)--> Accueil
 
 
 
-## Partie 3 – Interactions utilisateur → Réactions UI (ASCII)
+## Partie 3 – Interactions utilisateur → Réactions UI 
 
 **À faire :** lister au moins 4 interactions différentes. Exemple :
 
