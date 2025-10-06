@@ -148,50 +148,7 @@ flowchart LR
 # Partie 3 — Interactions UI (Mermaid, corrigé)
 
 
-## Version A — Flowchart  
-
-```mermaid
-flowchart LR
-  TapFAB((Tap FAB)) --> SnackFAB[SnackBar: Action executee]
-  TapCarte1((Tap Carte 1)) --> SnackC1[SnackBar: Carte 1]
-  TapCarte2((Tap Carte 2)) --> GoDetail[Navigate to Detail (id)]
-  TapIconParams((Tap Icon Parametres)) --> GoSettings[Navigate to Parametres]
-  ToggleTheme((Switch Theme)) --> Recompute[Recompute color scheme]
-```
-
-
-
-## Version B — Flowchart avec déclaration des nœuds puis liens
-
-```mermaid
-flowchart LR
-  %% --- Nodes ---
-  TapFAB((Tap FAB))
-  SnackFAB[SnackBar: Action executee]
-
-  TapCarte1((Tap Carte 1))
-  SnackC1[SnackBar: Carte 1]
-
-  TapCarte2((Tap Carte 2))
-  GoDetail[[Navigate to Detail id]]
-
-  TapIconParams((Tap Icon Parametres))
-  GoSettings[[Navigate to Parametres]]
-
-  ToggleTheme((Switch Theme))
-  Recompute[Recompute color scheme]
-
-  %% --- Edges ---
-  TapFAB --> SnackFAB
-  TapCarte1 --> SnackC1
-  TapCarte2 --> GoDetail
-  TapIconParams --> GoSettings
-  ToggleTheme --> Recompute
-```
-
-
-
-## Version C — Flowchart avec sous-graphes 
+## Version A— Flowchart avec sous-graphes 
 
 ```mermaid
 flowchart TD
@@ -219,7 +176,7 @@ flowchart TD
 ```
 
 
-## Version D — Sequence Diagram 
+## Version B — Sequence Diagram 
 
 ```mermaid
 sequenceDiagram
@@ -243,7 +200,7 @@ sequenceDiagram
 
 
 
-## Version E — interaction 
+## Version C — interaction 
 
 ```mermaid
 flowchart LR
